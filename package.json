@@ -1,0 +1,24 @@
+{
+    "name": "headless-hud-vue",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": "./dist/vue-gsi"
+        }
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@vueuse/core": "^10.7.2",
+        "vue": "^3.4.15"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^5.0.3",
+        "vite": "^5.1.0"
+    }
+}
