@@ -1,7 +1,44 @@
-# Vue 3 + Vite
+# A set of Vue 3 composables for CS2's Game State Integration
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This library contains a set of composables to assist with CS2 Game State integration, as well as a backend GSI websocket server integration to communicate between the game and the browser.
 
-## Recommended IDE Setup
+## Getting Started
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Put a gamestate integration file in your CS folder.
+
+```cfg
+"VUEHUD"
+{
+	"uri"		"http://localhost:8172/"
+	"timeout"		"0.1"
+	"buffer"		"0"
+	"throttle"		"0"
+	"heartbeat"		"0.01"
+	"data"
+	{
+		"provider"		"1"
+		"map"		"1"
+		"round"		"1"
+		"player_id"		"1"
+		"allplayers_id"		"1"
+		"player_state"		"1"
+		"allplayers_state"		"1"
+		"allplayers_match_stats"		"1"
+		"allplayers_weapons"		"1"
+		"allplayers_position"		"1"
+		"phase_countdowns"		"1"
+		"allgrenades"		"1"
+		"map_round_wins"		"1"
+		"player_position"		"1"
+		"bomb"		"1"
+	}
+	"output"
+	{
+		"precision_time"      "3"
+		"precision_position"  "3"
+		"precision_vector"    "3"
+	}
+}
+```
+
+Run `bun ./node_modules/gsi-vue/src/backend/index.js`
