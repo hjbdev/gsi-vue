@@ -6,7 +6,7 @@ import useGSI from "./useGSI";
  */
 export default function useFullPlayer() {
     return computed(() => {
-        const player = useGSI().value?.allplayers[gs.value.player?.steamid];
+        const player = useGSI().value?.allplayers[useGSI().value.player?.steamid];
         player.steamid = useGSI().value.player.steamid;
         return player;
     });
