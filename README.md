@@ -1,3 +1,5 @@
+> ⚠️ WORK IN PROGRESS. NOT FOR PRODUCTION USE YET.
+
 # A set of Vue 3 composables for CS2's Game State Integration
 
 This library contains a set of composables to assist with CS2 Game State integration, as well as a backend GSI websocket server integration to communicate between the game and the browser.
