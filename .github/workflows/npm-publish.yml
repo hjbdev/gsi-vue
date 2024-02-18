@@ -15,13 +15,6 @@ jobs:
       - uses: oven-sh/setup-bun@v1
       - run: bun install
       - run: bun run build
-
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: oven-sh/setup-bun@v1
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
