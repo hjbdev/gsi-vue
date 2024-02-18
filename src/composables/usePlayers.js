@@ -2,7 +2,16 @@ import { computed } from "vue";
 import useGSI from "./useGSI";
 
 const allplayers = computed(() => {
-    return useGSI().value?.allplayers ?? null;
+    if (!useGSI().value?.allplayers) {
+        return null;
+    }
+
+    return Object.keys(useGSI().value.allplayers).reduce((players, steamid) => {
+        const player = useGSI().value.allplayers[steamid];
+        player.steamid = steamid;
+        players[steamid] = player;
+        return players;
+    }, {});
 });
 
 const cts = computed(() => {
@@ -24,6 +33,6 @@ export default function usePlayers(team = null) {
     } else if (team === 'T') {
         return ts;
     }
-    
+
     return allplayers;
 }
