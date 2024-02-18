@@ -11,7 +11,7 @@ const allplayers = computed(() => {
 export default function usePlayers(team = null) {
     if (team) {
         return computed(() => {
-            return Object.values(allplayers.value).filter((player) => player.team === team) ?? null;
+            return Object.values(allplayers.value ?? []).filter((player) => player.team === team) ?? null;
         });
     }
     return allplayers;
