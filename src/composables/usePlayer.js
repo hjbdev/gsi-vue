@@ -6,6 +6,6 @@ import useGSI from "./useGSI";
  */
 export default function usePlayer() {
     return computed(() => {
-        return computed(() => useGSI().value?.player ?? null);
+        return useGSI().value?.player ?? null;
     });
 }
