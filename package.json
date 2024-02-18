@@ -1,10 +1,11 @@
 {
     "name": "vue-gsi",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "type": "module",
     "exports": {
         ".": {
-            "import": "./dist/vue-gsi"
+            "import": "./dist/vue-gsi.js",
+            "require": "./dist/vue-gsi.umd.cjs"
         }
     },
     "scripts": {
