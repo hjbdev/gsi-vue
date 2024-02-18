@@ -1,13 +1,17 @@
 import { computed } from "vue";
-import useGSI from "./useGSI";
+import usePlayer from "./usePlayer";
+import usePlayers from "./usePlayers";
 
 /**
- * @returns {import("vue").ComputedRef<import("./useGSI.js").Player>} The current player.
+ * @returns {import("vue").ComputedRef<import("./useGSI.js").Player | null>} The current player.
  */
 export default function useFullPlayer() {
     return computed(() => {
-        const player = useGSI().value?.allplayers[useGSI().value.player?.steamid];
-        player.steamid = useGSI().value.player.steamid;
+        if (!usePlayers().value || !usePlayer().value?.steamid) {
+            return null;
+        }
+        const player = usePlayers().value[usePlayer().value?.steamid];
+        player.steamid = usePlayer().value?.steamid;
         return player;
     });
 }
